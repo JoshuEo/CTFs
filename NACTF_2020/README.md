@@ -91,25 +91,36 @@ nactf{caancanccnxfynhtjlgllctekilyagxctftcffcfcctft}
 ## <a name="ari"></a> Arithmetic
 ![date](https://img.shields.io/badge/date-11.02.2020-brightgreen.svg) ![general category](https://img.shields.io/badge/Category-General-lightgrey.svg) ![score](https://img.shields.io/badge/score-150-blue.svg) 
 
+```
 ### Description
 Ian is exceptionally bad at arthimetic and needs some help on a problem: x + 2718281828 = 42. This should be simple... right?
-
+```
 ```
 HINT: What does uint32_t mean?
 ```
 
 ### Solution
 I was really stuck on this problem mainly because the math didn't add up (get it?!) They're asking us to input a number that stands true to the comparison. But what threw me off was that you CAN'T input negative numbers. A normal person would think its:
+
 x = -2718281786
+
 So I was stuck. Until I looked at the hint. "What does uint32_t mean?".
+
 uint_32 is the same as an unsigned integer. Ok so that explains why we couldn't use negatives. But when I searched up "uint_32 vulnerability" I found a CVE talking something called "integer overflow". What's that you ask?
+
 Integer overflow occurs when an arithmetic operation (+/-/*//) attempts to create a numeric value that is outside of the range that can be represented with a given number of digits.
+
 Since we know that uint_32 is an integer, we know that its maximum value is 2^32-1 which is 4294967295.
 > Tip: There is also uint_16 (short) and uint_64 (long) which have different max values as well!
+
 So an integer overflow occurs when you go over the limit of its expected value so the value turns into 0.
+
 After this aha moment, I did the maths:
+
 4294967296 - 2718281828 + 42 = 1576685510
+
 > The reason why I added one to uint_32's maximum value (4294967295) is because we also need to account for when the value turns to 0
+
 So once I entered the number, I received the flag!
 
 
@@ -235,6 +246,7 @@ This is the operation is called static analysis.
 **Static Analysis**: A method of computer program debugging that is done by examining the code without executing the program.
 We didn't execute this program, we only displayed the contents of them.
 > Tip: This is the single way to analyze executable files. If you were to analyze larger and more complex files, you would need a tool for static analysis. I recommend [Ghildra](https://ghidra-sre.org/) *You can find the flag using this tool as well!
+
 > Ghildra is a "software reverse engineering suite of tools developed by NSA's Research Directorate in support of the Cybersecurity mission"
 
 ### Flag
@@ -260,11 +272,13 @@ HINT: When static analysis fails, maybe you should turn to something else...
 Alright now this challenge needs a different approach as to the preceding challenge. When we try catting the file, we just see a lot of data, but no flag. There is no use scouring through the data because you won't find the flag there. If you see the hint, they are asking us to take a different approach of reverse engineering. So if static analysis (analysis without running the executable) doesn't work, then the opposite alternative would be dynamic analysis (analysis while running the executable). There are 2 command line tools called "ltrace" and "strace" that you should know.
 
 **ltrace vs strace**
+
 strace is a *system call and signal tracer*. It is primarily used to trace system calls (function calls made from programs to the kernel)
 ltrace is a *libary call tracer* and it is primarily used to trace calls made by programs to library functions. It can also trace system calls and signals, like strace.
 For more info: https://blog.packagecloud.io/eng/2016/03/14/how-does-ltrace-work/#:~:text=strace%20is%20a%20system%20call%20and%20signal%20tracer.&text=As%20described%20in%20our%20previous,calls%20and%20signals%2C%20like%20strace%20.
 
 In this challenge, we will use "ltrace" but it's good to understand both (there is also another tool called ptrace!).
+
 > How to install ltrace: sudo apt-get install ltrace
 
 Here are the results after running and tracing the executable
@@ -308,20 +322,3 @@ Nice!
 ```
 nactf{s0m3t1m3s_dyn4m1c_4n4lys1s_w1n5_gKSz3g6RiFGkskXx}
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
