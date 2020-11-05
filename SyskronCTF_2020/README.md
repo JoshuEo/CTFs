@@ -46,7 +46,7 @@ syskronCTF{d0-Y0u-UNdEr5TaND-C2eCh?}
 
 ## <a name="dos"></a> DoS attack
 ![date](https://img.shields.io/badge/date-10.21.2020-brightgreen.svg)
-![packet-analysis category](https://img.shields.io/badge/category-packet-analysis-lightgrey.svg)
+![packet-analysis category](https://img.shields.io/badge/Category-Packet%20Analysis-lightgrey)
 ![score](https://img.shields.io/badge/score-100-blue.svg)
 
 ### Description
