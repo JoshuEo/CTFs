@@ -1,15 +1,7 @@
-# CTF Name
-Total Points: 
-  Placing:    
-
-- [Category](#name)
-
-
-
 ## <a name="name"></a> Challenge Name
-![date](https://img.shields.io/badge/date-01.01.1970-brightgreen.svg)
+![date](https://img.shields.io/badge/date-11.01.2020-brightgreen.svg)
 ![challenge category](https://img.shields.io/badge/category-challenge-lightgrey.svg)
-![score](https://img.shields.io/badge/score-100-blue.svg)
+![score](https://img.shields.io/badge/score-100-blue.svg) 
 
 ### Description
 ```
