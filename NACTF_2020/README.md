@@ -79,7 +79,11 @@ After doing some research, I found this cheat sheet: [Link](https://www.rexegg.c
 ```
 grep "nactf{[nac]{10}.{21}[ctf]{14}}" flag.txt
 ```
-This was the correct pattern but I couldn't get it to work for some reason, so I decided to use sublime's regular expression search on the text file. After some debugging and playing around, I found the flag!
+This was the correct pattern but I couldn't get it to work for some reason
+
+EDIT: ```grep -E "nactf{[nac]{10}.{21}[ctf]{14}}" flag.txt``` will make the search work because the -E argument will interpret patterns as extended regular expressions.
+
+so I decided to use sublime's regular expression search on the text file. After some debugging and playing around, I found the flag!
 
 This took some time for me but it was worth it!
 
