@@ -1,8 +1,6 @@
 # Network Academy CTF 2020
 Total Points: 2251
   Placing:    232/968
-![](C:\Users\joshu\Downloads\Score over Time.png)
-![](C:\Users\joshu\Downloads\Category Breakdown.png)![](C:\Users\joshu\Downloads\Solve Percentages.png)
 
 - [General Skills](#general)
   - [Grep 0](#grep0)
